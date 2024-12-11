@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-11 19:28:56.860317",
+ "default_view": "List",
+ "description": "cur_frm.doc.__newname= \"SP Table\"",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_id",
+  "visit_date",
+  "doctor_id",
+  "symptoms",
+  "diagnosis",
+  "prescription",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Data",
+   "label": "Patient ID"
+  },
+  {
+   "fieldname": "visit_date",
+   "fieldtype": "Data",
+   "label": "Visit Date"
+  },
+  {
+   "fieldname": "doctor_id",
+   "fieldtype": "Data",
+   "label": "Doctor ID"
+  },
+  {
+   "fieldname": "symptoms",
+   "fieldtype": "Data",
+   "label": "Symptoms"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "prescription",
+   "fieldtype": "Data",
+   "label": "Prescription"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-11 19:28:56.860317",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Medical History1",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
