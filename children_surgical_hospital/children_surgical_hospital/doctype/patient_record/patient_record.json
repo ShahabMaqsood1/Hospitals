@@ -16,7 +16,11 @@
   "father_name",
   "cnic",
   "address",
-  "blood_group"
+  "blood_group",
+  "section_break_fhao",
+  "medical_history",
+  "section_break_ltxi",
+  "lab_tests"
  ],
  "fields": [
   {
@@ -83,11 +87,31 @@
    "fieldname": "blood_group",
    "fieldtype": "Data",
    "label": "Blood Group"
+  },
+  {
+   "fieldname": "section_break_fhao",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "medical_history",
+   "fieldtype": "Table",
+   "label": "Medical History",
+   "options": "Medical History"
+  },
+  {
+   "fieldname": "section_break_ltxi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lab_tests",
+   "fieldtype": "Table",
+   "label": "Lab Tests",
+   "options": "lab tests"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-12 16:01:27.215065",
+ "modified": "2024-12-12 18:06:25.401126",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Patient Record",

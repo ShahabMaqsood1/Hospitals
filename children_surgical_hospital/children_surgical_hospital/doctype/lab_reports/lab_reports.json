@@ -17,7 +17,7 @@
    "fieldname": "check_patient_no",
    "fieldtype": "Link",
    "label": "Appointment No.",
-   "options": "Check Patient1"
+   "options": "Check Patient"
   },
   {
    "fetch_from": "check_patient_no.patient_id",
@@ -52,7 +52,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-12 16:05:04.450472",
+ "modified": "2024-12-12 18:26:13.001792",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Lab Reports",
