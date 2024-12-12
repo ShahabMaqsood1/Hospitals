@@ -1,0 +1,156 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{patient_name}-{DD}-{MM}-{YY}",
+ "creation": "2024-12-12 16:09:21.309379",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_id",
+  "patient_name",
+  "operation",
+  "age",
+  "weight",
+  "address",
+  "phone",
+  "fathermother_name",
+  "identity_card_number",
+  "dr_id",
+  "dr_name",
+  "date",
+  "time",
+  "payments",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "check_patient.patient_id",
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient_ID",
+   "options": "Patient Record",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "patient_id.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Select",
+   "label": "Operation",
+   "options": "\nNone\nApendux\netc",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "patient_id.age",
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Age"
+  },
+  {
+   "fetch_from": "patient_id.weight",
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Weight"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fetch_from": "patient_id.contact_number",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fathermother_name",
+   "fieldtype": "Data",
+   "label": "Father/Mother Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "identity_card_number",
+   "fieldtype": "Data",
+   "label": "Identity Card Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dr_id",
+   "fieldtype": "Link",
+   "label": "Dr. Id",
+   "options": "Doctor"
+  },
+  {
+   "fetch_from": "dr_id.doctor_name",
+   "fieldname": "dr_name",
+   "fieldtype": "Data",
+   "label": "Dr. Name"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payments",
+   "fieldtype": "Table",
+   "label": "Payments",
+   "options": "Admission Payments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "New Admission",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-12 16:09:21.309379",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "New Admission",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
