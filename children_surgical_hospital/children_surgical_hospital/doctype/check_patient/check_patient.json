@@ -9,6 +9,7 @@
   "appointment_no",
   "patient_id",
   "phone",
+  "gender",
   "column_break_qzul",
   "patient_name",
   "doctor_name",
@@ -16,8 +17,9 @@
   "weight",
   "section_break_uytu",
   "report",
-  "lab_tests",
-  "amended_from"
+  "amended_from",
+  "section_break_dnbd",
+  "lab_tests"
  ],
  "fields": [
   {
@@ -91,12 +93,22 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "appointment_no.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "section_break_dnbd",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-12 18:18:37.828153",
+ "modified": "2025-01-09 00:07:17.153798",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Check Patient",
@@ -113,6 +125,20 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Doctor",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

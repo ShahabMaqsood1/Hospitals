@@ -8,9 +8,12 @@
  "engine": "InnoDB",
  "field_order": [
   "visit_date",
-  "symptoms",
   "diagnosis",
-  "prescription"
+  "prescription",
+  "medical_examination_findings",
+  "presenting_complaints",
+  "duration",
+  "advice"
  ],
  "fields": [
   {
@@ -19,25 +22,42 @@
    "label": "Visit Date"
   },
   {
-   "fieldname": "symptoms",
-   "fieldtype": "Data",
-   "label": "Symptoms"
-  },
-  {
    "fieldname": "diagnosis",
    "fieldtype": "Data",
    "label": "Diagnosis"
   },
   {
    "fieldname": "prescription",
-   "fieldtype": "Small Text",
-   "label": "Prescription"
+   "fieldtype": "Link",
+   "label": "Prescription",
+   "options": "Medicine"
+  },
+  {
+   "fieldname": "medical_examination_findings",
+   "fieldtype": "Data",
+   "label": "Medical Examination Findings"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Select",
+   "label": "Duration",
+   "options": "\nOnce a day\nSubha - Dupehar - Shaam\nSubha - Shaam"
+  },
+  {
+   "fieldname": "advice",
+   "fieldtype": "Data",
+   "label": "Advice"
+  },
+  {
+   "fieldname": "presenting_complaints",
+   "fieldtype": "Data",
+   "label": "Presenting Complaints"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-12 15:51:24.226861",
+ "modified": "2025-01-09 00:03:59.337946",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Patient Report",

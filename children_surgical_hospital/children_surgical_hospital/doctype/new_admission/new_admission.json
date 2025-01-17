@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{patient_name}-{DD}-{MM}-{YY}",
+ "autoname": "format:{patient_id}",
  "creation": "2024-12-12 16:09:21.309379",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -130,7 +130,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-12 16:09:21.309379",
+ "modified": "2025-01-02 00:09:30.537717",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "New Admission",
@@ -146,6 +146,17 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Receptionist",
    "share": 1,
    "write": 1
   }

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{check_patient_no}",
+ "autoname": "format:{patient_id}",
  "creation": "2024-12-12 16:05:04.450472",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -52,7 +52,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-12 18:26:13.001792",
+ "modified": "2025-01-01 23:52:26.440660",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Lab Reports",

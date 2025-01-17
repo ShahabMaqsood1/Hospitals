@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "Doctor-####",
+ "autoname": "Doctor-.##",
  "creation": "2024-12-12 15:57:47.146910",
  "default_view": "List",
  "doctype": "DocType",
@@ -51,7 +51,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-12 18:02:04.345487",
+ "modified": "2025-01-01 23:59:05.497969",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Doctor",
@@ -67,6 +67,17 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Receptionist",
    "share": 1,
    "write": 1
   }

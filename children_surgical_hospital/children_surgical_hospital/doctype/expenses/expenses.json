@@ -24,7 +24,9 @@
   {
    "fieldname": "payment_amount",
    "fieldtype": "Currency",
-   "label": "Payment Amount"
+   "label": "Payment Amount",
+   "non_negative": 1,
+   "precision": "2"
   },
   {
    "fieldname": "date",
@@ -34,7 +36,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-12 15:55:24.031336",
+ "modified": "2025-01-10 00:29:29.007805",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Expenses",
@@ -50,6 +52,17 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Receptionist",
    "share": 1,
    "write": 1
   }

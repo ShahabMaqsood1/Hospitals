@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{customer_name}-{####}",
  "creation": "2024-12-10 17:47:16.851814",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,7 +9,9 @@
   "customer_name",
   "medicine",
   "total_amount",
-  "date_of_sale"
+  "subtotal",
+  "date_of_sale",
+  "amended_from"
  ],
  "fields": [
   {
@@ -17,28 +20,49 @@
    "label": "Customer Name"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "medicine",
    "fieldtype": "Table",
    "label": "Medicine list",
    "options": "Pharmacy Sales Items"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
+   "default": "Today",
    "fieldname": "date_of_sale",
    "fieldtype": "Date",
    "label": "Date of Sale"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pharmacy Sales",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal"
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-12-11 19:25:12.711425",
+ "modified": "2025-01-17 20:22:47.450604",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Pharmacy Sales",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -51,6 +75,20 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pharmacy",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
