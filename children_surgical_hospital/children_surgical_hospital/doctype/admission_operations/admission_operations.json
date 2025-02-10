@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-06 23:09:21.684565",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operations",
+  "operation_doctor_id",
+  "anesthesia_doctor"
+ ],
+ "fields": [
+  {
+   "fieldname": "operations",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Operations",
+   "options": "Operations"
+  },
+  {
+   "fieldname": "operation_doctor_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctor Operating The Case",
+   "options": "Doctor"
+  },
+  {
+   "fieldname": "anesthesia_doctor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Anesthesia Doctor",
+   "options": "Doctor"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-06 23:16:15.144111",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Admission Operations",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

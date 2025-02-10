@@ -1,0 +1,23 @@
+{
+ "creation": "2025-01-29 19:32:27.450615",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Total Expenses",
+ "modified": "2025-02-03 17:48:49.051795",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Sum of Payment_amount-4",
+ "owner": "Administrator",
+ "report_field": "payment_amount",
+ "report_function": "Sum",
+ "report_name": "Expenses Report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

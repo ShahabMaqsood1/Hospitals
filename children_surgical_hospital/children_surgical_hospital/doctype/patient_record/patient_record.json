@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{patient_name}-{YY}-{###}",
+ "autoname": "format:{CSH}-{###}-{YY}",
  "creation": "2024-12-12 16:01:27.215065",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -110,8 +110,21 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2025-01-09 23:33:25.428952",
+ "links": [
+  {
+   "link_doctype": "Patient Appointment",
+   "link_fieldname": "patient_id"
+  },
+  {
+   "link_doctype": "New Admission",
+   "link_fieldname": "patient_id"
+  },
+  {
+   "link_doctype": "Lab Reports",
+   "link_fieldname": "patient_id"
+  }
+ ],
+ "modified": "2025-02-09 20:32:53.368238",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Patient Record",
@@ -138,6 +151,18 @@
    "read": 1,
    "report": 1,
    "role": "Receptionist",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Doctor",
    "share": 1,
    "write": 1
   }

@@ -7,19 +7,22 @@
  "engine": "InnoDB",
  "field_order": [
   "appointment_no",
-  "patient_id",
-  "phone",
+  "patient_name",
+  "age",
   "gender",
   "column_break_qzul",
-  "patient_name",
-  "doctor_name",
-  "age",
+  "patient_id",
+  "doctor_id",
   "weight",
+  "phone",
   "section_break_uytu",
   "report",
   "amended_from",
   "section_break_dnbd",
-  "lab_tests"
+  "lab_tests",
+  "payment",
+  "discount",
+  "remaining_total"
  ],
  "fields": [
   {
@@ -49,12 +52,6 @@
    "fieldname": "patient_name",
    "fieldtype": "Data",
    "label": "Patient Name"
-  },
-  {
-   "fetch_from": "appointment_no.doctor_name",
-   "fieldname": "doctor_name",
-   "fieldtype": "Data",
-   "label": "Doctor Name"
   },
   {
    "fetch_from": "appointment_no.age",
@@ -103,12 +100,40 @@
   {
    "fieldname": "section_break_dnbd",
    "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "appointment_no.doctor_id",
+   "fieldname": "doctor_id",
+   "fieldtype": "Data",
+   "label": "Doctor Name"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "appointment_no.payment",
+   "fieldname": "payment",
+   "fieldtype": "Data",
+   "label": "Amount Paid",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount",
+   "precision": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_total",
+   "fieldtype": "Currency",
+   "label": "Remaining Total",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-09 00:07:17.153798",
+ "modified": "2025-02-09 20:25:32.968296",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Check Patient",
@@ -136,7 +161,6 @@
    "read": 1,
    "report": 1,
    "role": "Doctor",
-   "select": 1,
    "share": 1,
    "submit": 1,
    "write": 1

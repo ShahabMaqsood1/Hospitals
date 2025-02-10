@@ -40,7 +40,7 @@
   {
    "allow_on_submit": 1,
    "fieldname": "selling_price",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "label": "Selling Price"
   },
   {
@@ -62,7 +62,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-17 17:42:10.501504",
+ "modified": "2025-01-18 21:03:05.236373",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Pharmacy Inventory",

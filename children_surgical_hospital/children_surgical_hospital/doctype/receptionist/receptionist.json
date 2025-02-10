@@ -1,27 +1,27 @@
 {
  "actions": [],
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{medicine_name}",
- "creation": "2025-01-05 15:59:21.946068",
+ "autoname": "format:{receptionist}",
+ "creation": "2025-01-20 17:13:48.310865",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "medicine_name"
+  "receptionist"
  ],
  "fields": [
   {
-   "fieldname": "medicine_name",
+   "fieldname": "receptionist",
    "fieldtype": "Data",
-   "label": "Medicine"
+   "label": "Receptionist",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-05 16:00:20.203625",
+ "modified": "2025-01-20 17:30:08.503911",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
- "name": "Medicine",
+ "name": "Receptionist",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

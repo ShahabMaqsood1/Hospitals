@@ -8,45 +8,43 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
-  "status",
-  "payment",
   "section_break_exad",
   "column_break_duoa",
-  "patient_id",
+  "naming_series",
   "patient_name",
-  "age",
   "weight",
-  "gender",
   "phone_number",
+  "column_break_qjqo",
+  "patient_id",
+  "age",
+  "gender",
   "email",
-  "section_break_ddho",
+  "section_break_osut",
+  "payment",
+  "discount",
+  "column_break_csmi",
+  "status",
   "doctor_id",
-  "doctor_name",
+  "section_break_ddho",
   "appointment_date",
+  "receptionist",
+  "column_break_vjzr",
   "appointment_time",
+  "remaining_total",
   "amended_from"
  ],
  "fields": [
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Series",
    "options": "CSH.-.DD.-.MM.-.YY.-.###"
   },
   {
    "allow_on_submit": 1,
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Status",
-   "options": "Scheduled\nCompleted\nCanceled"
-  },
-  {
-   "allow_on_submit": 1,
    "fieldname": "payment",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Payment",
    "precision": "2",
    "reqd": 1
@@ -62,6 +60,7 @@
   {
    "fieldname": "patient_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Patient_Id",
    "options": "Patient Record",
    "reqd": 1
@@ -70,19 +69,23 @@
    "fetch_from": "patient_id.patient_name",
    "fieldname": "patient_name",
    "fieldtype": "Data",
-   "label": "Patient Name"
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
   },
   {
    "fetch_from": "patient_id.age",
    "fieldname": "age",
    "fieldtype": "Data",
-   "label": "Age"
+   "label": "Age",
+   "reqd": 1
   },
   {
    "fetch_from": "patient_id.weight",
    "fieldname": "weight",
    "fieldtype": "Float",
-   "label": "Weight"
+   "label": "Weight",
+   "reqd": 1
   },
   {
    "fetch_from": "patient_id.contact_number",
@@ -101,21 +104,10 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "doctor_id",
-   "fieldtype": "Link",
-   "label": "Doctor_Id",
-   "options": "Doctor"
-  },
-  {
-   "fetch_from": "doctor_id.doctor_name",
-   "fieldname": "doctor_name",
-   "fieldtype": "Data",
-   "label": "Doctor Name"
-  },
-  {
    "default": "Today",
    "fieldname": "appointment_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Appointment Date",
    "reqd": 1
   },
@@ -123,41 +115,90 @@
    "default": "Now",
    "fieldname": "appointment_time",
    "fieldtype": "Time",
+   "in_list_view": 1,
    "label": "Appointment Time",
    "reqd": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Patient Appointment",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Patient Appointment",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fetch_from": "patient_id.gender",
    "fieldname": "gender",
    "fieldtype": "Data",
-   "label": "Gender"
+   "label": "Gender",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "mandatory_depends_on": "eval:doc.docstatus==1",
+   "options": "Scheduled\nCompleted\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receptionist",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Receptionist",
+   "read_only": 1
+  },
+  {
+   "fieldname": "doctor_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctor",
+   "options": "Doctor",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Data",
+   "label": "Discount",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_total",
+   "fieldtype": "Data",
+   "label": "Remaining Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_csmi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qjqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vjzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_osut",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Patient Appointment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-09 23:34:24.197435",
+ "modified": "2025-02-09 20:27:09.015866",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Patient Appointment",
@@ -185,6 +226,17 @@
    "report": 1,
    "role": "Receptionist",
    "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Doctor",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

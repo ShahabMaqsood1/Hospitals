@@ -1,26 +1,23 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "Doctor-.##",
+ "autoname": "format:{doctor_name}",
  "creation": "2024-12-12 15:57:47.146910",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "doctor_id",
   "doctor_name",
   "specialization",
+  "is_anesthesia",
   "email",
   "contact_number",
   "availablilty_schedule_tab",
   "availability_schedule"
  ],
  "fields": [
-  {
-   "fieldname": "doctor_name",
-   "fieldtype": "Data",
-   "label": "Doctor Name"
-  },
   {
    "fieldname": "specialization",
    "fieldtype": "Data",
@@ -47,15 +44,33 @@
    "fieldtype": "Table",
    "label": "Availability Schedule",
    "options": "Availability"
+  },
+  {
+   "fieldname": "doctor_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Doctor ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "doctor_name",
+   "fieldtype": "Data",
+   "label": "Doctor Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_anesthesia",
+   "fieldtype": "Check",
+   "label": "Anesthesia Doctor"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-01 23:59:05.497969",
+ "modified": "2025-01-22 22:09:47.125622",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Doctor",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

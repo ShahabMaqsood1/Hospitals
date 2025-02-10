@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{patient_id}",
+ "autoname": "format:{patient_id}-{MM}-{DD}",
  "creation": "2024-12-12 16:05:04.450472",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,7 +10,9 @@
   "patient_id",
   "patient_name",
   "lab_tests",
-  "amended_from"
+  "amended_from",
+  "date_of_report",
+  "receptionist"
  ],
  "fields": [
   {
@@ -47,12 +49,25 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "receptionist",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Receptionist"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_report",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-01 23:52:26.440660",
+ "modified": "2025-02-09 20:22:07.012176",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Lab Reports",

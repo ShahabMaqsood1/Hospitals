@@ -1,0 +1,62 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2025-01-27 23:59:01.956804",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "medicine",
+   "fieldtype": "Data",
+   "label": "Medicine",
+   "mandatory": 0,
+   "options": "",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Patient Appointment Header",
+ "letterhead": null,
+ "modified": "2025-01-31 22:56:34.088968",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Pharmacy Sales Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Pharmacy Sales",
+ "report_name": "Pharmacy Sales Report",
+ "report_script": "if filters.get('from_date') and filters.get('to_date'):\r\n    # Define columns\r\n    columns = [\r\n        {\"label\": \"Customer Name\", \"fieldname\": \"customer_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": \"Medicine\", \"fieldname\": \"medicine\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": \"Quantity\", \"fieldname\": \"quantity\", \"fieldtype\": \"Int\", \"width\": 100},\r\n        {\"label\": \"Price\", \"fieldname\": \"price\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": \"Amount\", \"fieldname\": \"amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": \"Discount\", \"fieldname\": \"discount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": \"Subtotal\", \"fieldname\": \"subtotal\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": \"Total Amount\", \"fieldname\": \"total_amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": \"Date of Sale\", \"fieldname\": \"date_of_sale\", \"fieldtype\": \"Date\", \"width\": 120},\r\n    ]\r\n\r\n    # Base SQL query\r\n    base_query = \"\"\"\r\n        SELECT \r\n            ps.customer_name AS customer_name,\r\n            psi.medicine AS medicine,\r\n            psi.quantity AS quantity,\r\n            psi.price AS price,\r\n            psi.amount AS amount,\r\n            ps.discount AS discount,\r\n            ps.subtotal AS subtotal,\r\n            ps.total_amount AS total_amount,\r\n            ps.date_of_sale AS date_of_sale\r\n        FROM \r\n            `tabPharmacy Sales` ps\r\n        LEFT JOIN \r\n            `tabPharmacy Sales Items` psi ON psi.parent = ps.name\r\n        WHERE \r\n            ps.docstatus IN (0, 1)\r\n            AND ps.date_of_sale BETWEEN %s AND %s\r\n    \"\"\"\r\n\r\n    # Prepare conditions and values\r\n    conditions = \"\"\r\n    values = [filters.get('from_date'), filters.get('to_date')]\r\n\r\n    # Add filter for Customer Name if provided\r\n    if filters.get('customer_name'):\r\n        conditions += \" AND ps.customer_name = %s\"\r\n        values.append(filters.get('customer_name'))\r\n\r\n    # Add filter for Medicine if provided\r\n    if filters.get('medicine'):\r\n        conditions += \" AND psi.medicine = %s\"\r\n        values.append(filters.get('medicine'))\r\n\r\n    # Complete query with conditions\r\n    query = base_query + conditions + \"\"\"\r\n        ORDER BY \r\n            ps.date_of_sale, ps.customer_name\r\n    \"\"\"\r\n\r\n    # Execute the query\r\n    raw_data = frappe.db.sql(query, values, as_dict=True)\r\n\r\n    # Prepare the data to return\r\n    data = columns, raw_data, None, None, None\r\n",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Pharmacy"
+  }
+ ],
+ "timeout": 0
+}

@@ -8,7 +8,9 @@
   "name1",
   "reason_for_payment",
   "payment_amount",
-  "date"
+  "date",
+  "time",
+  "receptionist"
  ],
  "fields": [
   {
@@ -32,11 +34,23 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fieldname": "receptionist",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Receptionist"
+  },
+  {
+   "default": "Now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-10 00:29:29.007805",
+ "modified": "2025-01-23 18:01:40.030394",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Expenses",
