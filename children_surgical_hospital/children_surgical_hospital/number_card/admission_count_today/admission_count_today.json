@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2025-01-29 19:06:53.797563",
+ "creation": "2025-02-12 22:46:41.359113",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "New Admission",
@@ -11,7 +11,7 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "Admission Count Today",
- "modified": "2025-01-31 22:40:59.022894",
+ "modified": "2025-02-12 22:46:41.359113",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Admission Count Today",

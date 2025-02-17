@@ -1,0 +1,211 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{patient_id}-{MM}-{DD}",
+ "creation": "2024-12-12 16:09:21.309379",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_id",
+  "patient_name",
+  "age",
+  "weight",
+  "phone",
+  "amended_from",
+  "column_break_igcf",
+  "address",
+  "fathermother_name",
+  "identity_card_number",
+  "dr_id",
+  "admission_in",
+  "section_break_ilvu",
+  "admission_operations",
+  "section_break_kaqx",
+  "payments",
+  "section_break_cwat",
+  "date",
+  "time_of_admission",
+  "receptionist",
+  "column_break_akzw",
+  "date_of_discharge",
+  "time_of_discharge"
+ ],
+ "fields": [
+  {
+   "fetch_from": "check_patient.patient_id",
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient_ID",
+   "options": "Patient Record",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "patient_id.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name"
+  },
+  {
+   "fetch_from": "patient_id.age",
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Age"
+  },
+  {
+   "fetch_from": "patient_id.weight",
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Weight"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fetch_from": "patient_id.contact_number",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fathermother_name",
+   "fieldtype": "Data",
+   "label": "Father/Mother Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "identity_card_number",
+   "fieldtype": "Data",
+   "label": "Identity Card Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dr_id",
+   "fieldtype": "Link",
+   "label": "Doctor",
+   "options": "Doctor"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date of Admission",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payments",
+   "fieldtype": "Table",
+   "label": "Payments",
+   "options": "Admission Payments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "New Admission",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "receptionist",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Receptionist"
+  },
+  {
+   "fieldname": "date_of_discharge",
+   "fieldtype": "Date",
+   "label": "Date of Discharge"
+  },
+  {
+   "fieldname": "admission_operations",
+   "fieldtype": "Table",
+   "label": "Admission Operations",
+   "options": "Admission Operations"
+  },
+  {
+   "fieldname": "column_break_igcf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cwat",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_akzw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time_of_discharge",
+   "fieldtype": "Time",
+   "label": "Time of Discharge"
+  },
+  {
+   "fieldname": "section_break_ilvu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_kaqx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "time_of_admission",
+   "fieldtype": "Time",
+   "label": "Time of Admission",
+   "reqd": 1
+  },
+  {
+   "fieldname": "admission_in",
+   "fieldtype": "Select",
+   "label": "Admission in",
+   "options": "\nWard 1\nWard 2\nICU\nRoom 1\nRoom 2\nRoom 3\nRoom 4\nRoom 5\nRoom 6\nExecutive Room"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-07 19:56:29.130823",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "New Admission",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Receptionist",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

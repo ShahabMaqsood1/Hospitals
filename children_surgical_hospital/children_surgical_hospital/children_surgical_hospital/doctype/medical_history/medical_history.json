@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-12 15:52:08.634758",
+ "default_view": "List",
+ "description": "cur_frm.doc.__newname= \"SP Table\"",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_id",
+  "visit_date",
+  "diagnosis",
+  "prescription",
+  "medical_examination_findings",
+  "presenting_complaints",
+  "duration",
+  "quantity",
+  "advice",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Data",
+   "label": "Patient ID"
+  },
+  {
+   "fieldname": "visit_date",
+   "fieldtype": "Data",
+   "label": "Visit Date"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "prescription",
+   "fieldtype": "Select",
+   "label": "Prescription"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Data",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "advice",
+   "fieldtype": "Small Text",
+   "label": "Advice"
+  },
+  {
+   "fieldname": "medical_examination_findings",
+   "fieldtype": "Data",
+   "label": "Medical Examination Findings"
+  },
+  {
+   "fieldname": "presenting_complaints",
+   "fieldtype": "Data",
+   "label": "Presenting Complaints"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Additional Instructions"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Data",
+   "label": "Quantity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 20:32:57.360801",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Medical History",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{patient_id}-{MM}-{DD}",
+ "creation": "2024-12-12 16:05:04.450472",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "check_patient_no",
+  "patient_id",
+  "patient_name",
+  "lab_tests",
+  "amended_from",
+  "date_of_report",
+  "receptionist"
+ ],
+ "fields": [
+  {
+   "fieldname": "check_patient_no",
+   "fieldtype": "Link",
+   "label": "Appointment No.",
+   "options": "Check Patient"
+  },
+  {
+   "fetch_from": "check_patient_no.patient_id",
+   "fieldname": "patient_id",
+   "fieldtype": "Data",
+   "label": "Patient ID"
+  },
+  {
+   "fetch_from": "check_patient_no.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "lab_tests",
+   "fieldtype": "Table",
+   "label": "Lab tests",
+   "options": "lab tests"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lab Reports",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "receptionist",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Receptionist"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_report",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-09 20:22:07.012176",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Lab Reports",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,79 @@
+{
+ "charts": [
+  {
+   "chart_name": "Additional Payments Chart",
+   "label": "Payments Chart"
+  }
+ ],
+ "content": "[{\"id\":\"aPIJsRtZ1D\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Payments Count\",\"col\":3}},{\"id\":\"_FhtCMYoDY\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Payments Total\",\"col\":3}},{\"id\":\"V3IB4DjfSI\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Payments Count Today\",\"col\":3}},{\"id\":\"s5CK21s_il\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Payments Today\",\"col\":3}},{\"id\":\"ChlPjjCvTK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Payment\",\"col\":5}},{\"id\":\"T8KF6zQ5DV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Additional Payments Report\",\"col\":5}},{\"id\":\"ShnqQxjzId\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Additional Payments List\",\"col\":4}},{\"id\":\"b0j0cqy-wq\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Payments Chart\",\"col\":8}}]",
+ "creation": "2025-02-12 23:05:32.251227",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "shortcut",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "More Payments",
+ "links": [],
+ "modified": "2025-02-12 23:05:32.251227",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "More Payments",
+ "number_cards": [
+  {
+   "label": "Payments Total",
+   "number_card_name": "Additional Payments Total"
+  },
+  {
+   "label": "Payments Count Today",
+   "number_card_name": "Additional Payments count Today"
+  },
+  {
+   "label": "Total Payments Count",
+   "number_card_name": "Additional Payments"
+  },
+  {
+   "label": "Total Payments Today",
+   "number_card_name": "Additional Payments Total Today"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "Accounting",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Additional Payments",
+   "label": "Additional Payments List",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Receptionist"
+  }
+ ],
+ "sequence_id": 6.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "New Payment",
+   "type": "URL",
+   "url": "http://209.38.149.177:8080/app/additional-payments/new-additional-payments-kesljebeue"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Additional Payments Report",
+   "type": "URL",
+   "url": "http://209.38.149.177:8080/app/query-report/Additional%20Payments%20Report"
+  }
+ ],
+ "title": "More Payments"
+}

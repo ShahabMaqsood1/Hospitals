@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{####}-{YY}",
+ "creation": "2025-01-17 00:09:04.820199",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qcwr",
+  "bill_date",
+  "supplier_name",
+  "items",
+  "subtotal",
+  "total_amount",
+  "amount_paid",
+  "change_returned",
+  "bill_status",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qcwr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "bill_date",
+   "fieldtype": "Data",
+   "label": "Bill Date"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Pharmacy Bill Item"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Pharmacy Bills",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Unpaid",
+   "fieldname": "bill_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Bill Status",
+   "mandatory_depends_on": "eval:doc.docstatus==1",
+   "options": "Unpaid\nPaid",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Float",
+   "label": "Subtotal"
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Float",
+   "label": "Amount Paid"
+  },
+  {
+   "fieldname": "change_returned",
+   "fieldtype": "Float",
+   "label": "Balance/Change Returned"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-19 13:34:17.988317",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Pharmacy Bills",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Pharmacy",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

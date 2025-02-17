@@ -1,0 +1,23 @@
+{
+ "creation": "2025-02-12 22:39:51.260443",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{\"from_date\":\"frappe.datetime.get_today()\",\"to_date\":\"frappe.datetime.get_today()\"}",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Admission Payments today",
+ "modified": "2025-02-12 22:41:31.546917",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Admission Payments today",
+ "owner": "Administrator",
+ "report_field": "payment_amount",
+ "report_function": "Sum",
+ "report_name": "New Admissions Report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

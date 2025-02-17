@@ -1,0 +1,48 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2025-01-23 00:28:38.578025",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "label": "Patient ID",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "lab_tests",
+   "fieldtype": "Data",
+   "label": "Lab tests",
+   "mandatory": 1,
+   "options": "Lab tests",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Patient Appointment Header",
+ "letterhead": null,
+ "modified": "2025-01-23 00:32:08.147140",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Lab Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    name AS \"Lab Report ID:Link/Lab Reports:150\",\r\n    check_patient_no AS \"Check Patient No:Link/Check Patient:120\",\r\n    patient_id AS \"Patient ID:Data:120\",\r\n    patient_name AS \"Patient Name:Data:150\",\r\n    (SELECT GROUP_CONCAT(lab_tests, ': ', upload_results SEPARATOR '\\n')\r\n     FROM tabLab tests\r\n     WHERE parent = tabLab Reports.name) AS \"Lab tests and Results:Text:400\",\r\n    (SELECT payment_amount\r\n     FROM tabLab tests\r\n     WHERE parent = tabLab Reports.name\r\n     LIMIT 1) AS \"Payment Amount:Currency:100\"\r\nFROM\r\n    tabLab Reports\r\nORDER BY\r\n    name DESC;\r\n",
+ "ref_doctype": "Lab Reports",
+ "report_name": "Lab Report",
+ "report_type": "Query Report",
+ "roles": [],
+ "timeout": 0
+}

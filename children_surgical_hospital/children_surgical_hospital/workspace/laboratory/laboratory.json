@@ -1,0 +1,72 @@
+{
+ "charts": [
+  {
+   "chart_name": "Lab Reports Chart",
+   "label": "Lab Tests Chart"
+  }
+ ],
+ "content": "[{\"id\":\"OwZJQKJnt9\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Labs \",\"col\":3}},{\"id\":\"Sbp1QiXXPe\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Labs Payment\",\"col\":3}},{\"id\":\"ZEG_P8JqkF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Labs Today\",\"col\":3}},{\"id\":\"7pNGdCwRTx\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Labs Payment Today\",\"col\":3}},{\"id\":\"0e8K2vb11X\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create New\",\"col\":5}},{\"id\":\"bQvZnj3x8S\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View Report\",\"col\":5}},{\"id\":\"oGINAAfeXb\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Lab Report List\",\"col\":4}},{\"id\":\"vtrJLKI3mf\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Lab Tests Chart\",\"col\":8}}]",
+ "creation": "2025-02-12 23:02:48.392053",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "healthcare",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Laboratory",
+ "links": [],
+ "modified": "2025-02-12 23:02:48.392053",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Laboratory",
+ "number_cards": [
+  {
+   "label": "Total Labs ",
+   "number_card_name": "Labs Count Total"
+  },
+  {
+   "label": "Total Labs Payment",
+   "number_card_name": "Lab Reports Total"
+  },
+  {
+   "label": "Total Labs Today",
+   "number_card_name": "Labs Count Total Today"
+  },
+  {
+   "label": "Total Labs Payment Today",
+   "number_card_name": "Lab Reports Total Today"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Lab Reports",
+   "label": "Lab Report List",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 8.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "View Report",
+   "type": "URL",
+   "url": "http://209.38.149.177:8080/app/query-report/Lab%20Reports"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Create New",
+   "type": "URL",
+   "url": "http://209.38.149.177:8080/app/lab-reports/new-lab-reports-xjaiyaxvbd"
+  }
+ ],
+ "title": "Laboratory"
+}

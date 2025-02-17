@@ -1,0 +1,37 @@
+{
+ "based_on": "modified",
+ "chart_name": "Appointments",
+ "chart_type": "Sum",
+ "color": "#c23c3c",
+ "creation": "2025-01-13 23:16:44.228610",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "document_type": "Patient Appointment",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[]",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "last_synced_on": "2025-01-13 23:19:33.877507",
+ "modified": "2025-01-13 23:34:53.799773",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Appointments",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "parent_document_type": "",
+ "roles": [
+  {
+   "role": "Receptionist"
+  }
+ ],
+ "source": "",
+ "time_interval": "Daily",
+ "timeseries": 1,
+ "timespan": "Last Year",
+ "type": "Donut",
+ "use_report_chart": 0,
+ "value_based_on": "payment",
+ "y_axis": []
+}

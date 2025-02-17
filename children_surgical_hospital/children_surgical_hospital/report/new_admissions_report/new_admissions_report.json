@@ -1,0 +1,58 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2025-02-11 17:59:29.639275",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "label": "Patient Id",
+   "mandatory": 0,
+   "options": "Patient Record",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "",
+ "letterhead": null,
+ "modified": "2025-02-12 20:12:02.581199",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "New Admissions Report",
+ "owner": "randeljack123@gmail.com",
+ "prepared_report": 0,
+ "ref_doctype": "New Admission",
+ "report_name": "New Admissions Report",
+ "report_script": "if filters.get('from_date') and filters.get('to_date'):\r\n    # Define columns\r\n    columns = [\r\n        {\"label\": \"Patient ID\", \"fieldname\": \"patient_id\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": \"Patient Name\", \"fieldname\": \"patient_name\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": \"Doctor\", \"fieldname\": \"dr_id\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": \"Operation\", \"fieldname\": \"operations\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": \"Operation Doctor ID\", \"fieldname\": \"operation_doctor_id\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": \"Anesthesia Doctor\", \"fieldname\": \"anesthesia_doctor\", \"fieldtype\": \"Data\", \"width\": 150},\r\n        {\"label\": \"Payment Date\", \"fieldname\": \"payment_date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": \"Payment Amount\", \"fieldname\": \"payment_amount\", \"fieldtype\": \"Currency\", \"width\": 120},\r\n        {\"label\": \"Payment Remarks\", \"fieldname\": \"payment_remarks\", \"fieldtype\": \"Data\", \"width\": 250},\r\n        {\"label\": \"Date of Admission\", \"fieldname\": \"date\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": \"Time\", \"fieldname\": \"time\", \"fieldtype\": \"Time\", \"width\": 120},\r\n        {\"label\": \"Date of Discharge\", \"fieldname\": \"date_of_discharge\", \"fieldtype\": \"Date\", \"width\": 120},\r\n        {\"label\": \"Time of Discharge\", \"fieldname\": \"time_of_discharge\", \"fieldtype\": \"Time\", \"width\": 120},\r\n    ]\r\n\r\n    # Base SQL query\r\n    base_query = \"\"\"\r\n        SELECT  \r\n            na.patient_id AS patient_id,\r\n            na.patient_name AS patient_name,\r\n            na.dr_id AS dr_id,\r\n            nao.operations AS operations,\r\n            nao.operation_doctor_id AS operation_doctor_id,\r\n            nao.anesthesia_doctor AS anesthesia_doctor,\r\n            nap.date AS payment_date,\r\n            nap.payment_amount AS payment_amount,\r\n            nap.remarks AS payment_remarks,\r\n            na.date AS date,\r\n            na.time AS time,\r\n            na.date_of_discharge AS date_of_discharge,\r\n            na.time_of_discharge AS time_of_discharge\r\n        FROM \r\n            `tabNew Admission` na\r\n        LEFT JOIN \r\n            `tabAdmission Operations` nao ON nao.parent = na.name\r\n        LEFT JOIN \r\n            `tabAdmission Payments` nap ON nap.parent = na.name\r\n        WHERE \r\n            na.docstatus IN (0, 1)\r\n            AND na.date BETWEEN %s AND %s\r\n    \"\"\"\r\n\r\n    # Prepare conditions and values\r\n    conditions = \"\"\r\n    values = [filters.get('from_date'), filters.get('to_date')]\r\n\r\n    # Add filter for Patient ID if provided\r\n    if filters.get('patient_id'):\r\n        conditions += \" AND na.patient_id = %s\"\r\n        values.append(filters.get('patient_id'))\r\n\r\n    # Add filter for Patient Name if provided\r\n    if filters.get('patient_name'):\r\n        conditions += \" AND na.patient_name = %s\"\r\n        values.append(filters.get('patient_name'))\r\n\r\n    # Add filter for Doctor ID if provided\r\n    if filters.get('dr_id'):\r\n        conditions += \" AND na.dr_id = %s\"\r\n        values.append(filters.get('dr_id'))\r\n\r\n    # Add filter for Operation if provided\r\n    if filters.get('operations'):\r\n        conditions += \" AND nao.operations = %s\"\r\n        values.append(filters.get('operations'))\r\n\r\n    # Complete query with conditions\r\n    query = base_query + conditions + \"\"\"\r\n        ORDER BY \r\n            na.date, na.patient_name\r\n    \"\"\"\r\n\r\n    # Execute the query\r\n    raw_data = frappe.db.sql(query, values, as_dict=True)\r\n\r\n    # Prepare the data to return\r\n    data = columns, raw_data, None, None, None\r\n",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Receptionist"
+  },
+  {
+   "role": "Doctor"
+  }
+ ],
+ "timeout": 0
+}

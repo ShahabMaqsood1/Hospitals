@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2025-01-29 19:11:53.090103",
+ "creation": "2025-02-12 22:46:51.152372",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "Additional Payments",
@@ -11,7 +11,7 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "Additional Payments",
- "modified": "2025-01-31 22:40:42.766521",
+ "modified": "2025-02-12 22:46:51.152372",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Additional Payments",

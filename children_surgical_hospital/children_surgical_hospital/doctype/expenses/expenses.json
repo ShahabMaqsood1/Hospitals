@@ -1,7 +1,8 @@
 {
  "actions": [],
  "autoname": "format:{name1}-{DD}-{MM}-{YY}-{####}",
- "creation": "2024-12-12 15:55:24.031336",
+ "creation": "2025-02-17 18:54:36.934304",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -10,7 +11,8 @@
   "payment_amount",
   "date",
   "time",
-  "receptionist"
+  "receptionist",
+  "amended_from"
  ],
  "fields": [
   {
@@ -46,11 +48,22 @@
    "fieldname": "time",
    "fieldtype": "Time",
    "label": "Time"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Expenses",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-01-23 18:01:40.030394",
+ "modified": "2025-02-17 18:54:36.934304",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Expenses",

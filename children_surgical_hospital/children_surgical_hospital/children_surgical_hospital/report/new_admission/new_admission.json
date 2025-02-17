@@ -1,0 +1,28 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-12-12 18:34:07.129758",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "CSH",
+ "letterhead": null,
+ "modified": "2024-12-12 18:34:07.129758",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "New Admission",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    name AS \"Admission ID:Link/New Admission:150\",\r\n    patient_id AS \"Patient ID:Data:120\",\r\n    patient_name AS \"Patient Name:Data:150\",\r\n    operation AS \"Operation:Data:150\",\r\n    age AS \"Age:Int:50\",\r\n    weight AS \"Weight:Float:50\",\r\n    address AS \"Address:Data:200\",\r\n    phone AS \"Phone:Data:120\",\r\n    fathermother_name AS \"Parent/Guardian Name:Data:150\",\r\n    identity_card_number AS \"ID Card Number:Data:150\",\r\n    dr_name AS \"Doctor Name:Data:150\",\r\n    date AS \"Date:Date:120\",\r\n    time AS \"Time:Time:100\",\r\n    (SELECT GROUP_CONCAT(date, ': ', payment_amount, ' | ', remarks SEPARATOR '\\n')\r\n     FROM tabAdmission Payments\r\n     WHERE parent = tabNew Admission.name) AS \"Payments:Text:400\"\r\nFROM\r\n    tabNew Admission\r\nORDER BY\r\n    date DESC, time ASC;\r\n",
+ "ref_doctype": "New Admission",
+ "report_name": "New Admission",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

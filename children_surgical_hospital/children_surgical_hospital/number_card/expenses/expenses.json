@@ -1,5 +1,5 @@
 {
- "creation": "2025-01-26 20:27:23.998764",
+ "creation": "2025-02-12 22:45:41.982537",
  "docstatus": 0,
  "doctype": "Number Card",
  "dynamic_filters_json": "{}",
@@ -9,7 +9,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Expenses",
- "modified": "2025-02-03 17:46:09.298434",
+ "modified": "2025-02-12 22:45:41.982537",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Expenses",

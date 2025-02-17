@@ -1,0 +1,66 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"XhsuaOo7sC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Appointments\",\"col\":6}},{\"id\":\"ZtTmcovX8C\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Appointments Today\",\"col\":6}},{\"id\":\"eXb0jJJ5wb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create New Appointment\",\"col\":5}},{\"id\":\"qz9h1SWloU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Appointments Report\",\"col\":5}},{\"id\":\"gIZtmo2ma8\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Appointments List\",\"col\":4}}]",
+ "creation": "2025-02-12 23:09:22.111165",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "organization",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Appointments",
+ "links": [],
+ "modified": "2025-02-12 23:09:22.111165",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Appointments",
+ "number_cards": [
+  {
+   "label": "Total Appointments",
+   "number_card_name": "Appointment count total"
+  },
+  {
+   "label": "Total Appointments Today",
+   "number_card_name": "Appointment count today"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Patient Appointment",
+   "label": "Appointments List",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Receptionist"
+  }
+ ],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Create New Appointment",
+   "type": "URL",
+   "url": "http://209.38.149.177:8080/app/patient-appointment/new-patient-appointment-daurtjstgt"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Open Appointments Report",
+   "type": "URL",
+   "url": "http://209.38.149.177:8080/app/query-report/Patient%20Appointment"
+  }
+ ],
+ "title": "Appointments"
+}

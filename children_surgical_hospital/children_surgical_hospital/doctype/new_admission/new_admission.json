@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{patient_id}-{MM}-{DD}",
- "creation": "2024-12-12 16:09:21.309379",
+ "creation": "2025-02-17 18:56:59.247825",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -28,7 +28,8 @@
   "receptionist",
   "column_break_akzw",
   "date_of_discharge",
-  "time_of_discharge"
+  "time_of_discharge",
+  "amended_from"
  ],
  "fields": [
   {
@@ -168,12 +169,22 @@
    "fieldtype": "Select",
    "label": "Admission in",
    "options": "\nWard 1\nWard 2\nICU\nRoom 1\nRoom 2\nRoom 3\nRoom 4\nRoom 5\nRoom 6\nExecutive Room"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "New Admission",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-07 19:56:29.130823",
+ "modified": "2025-02-17 18:56:59.247825",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "New Admission",

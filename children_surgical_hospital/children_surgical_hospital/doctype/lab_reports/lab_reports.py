@@ -1,9 +1,8 @@
-# Copyright (c) 2024, Shahab Maqsood and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
 
-
-class LabReports(Document):
-	pass
+class PatientAppointment(Document):
+    def before_insert(self):
+        if not self.receptionist:
+            user_full_name = frappe.db.get_value("User", frappe.session.user, "full_name")
+            self.receptionist = user_full_name

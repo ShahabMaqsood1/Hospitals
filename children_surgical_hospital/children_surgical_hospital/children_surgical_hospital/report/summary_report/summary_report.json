@@ -1,0 +1,51 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-01-29 20:10:16.570707",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Patient Appointment Header",
+ "letterhead": null,
+ "modified": "2025-01-31 22:55:17.164620",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Summary Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    'Patient Appointments' as category,\r\n    IFNULL(SUM(remaining_total), 0) as total_amount,\r\n    COUNT(*) as transaction_count\r\nFROM \r\n    `tabPatient Appointment`\r\nWHERE \r\n    appointment_date BETWEEN %(from_date)s AND %(to_date)s\r\n\r\nUNION ALL\r\n\r\nSELECT \r\n    'New Admissions' as category,\r\n    IFNULL(SUM(child.payment_amount), 0) as total_amount,\r\n    COUNT(DISTINCT parent.name) as transaction_count\r\nFROM \r\n    `tabNew Admission` parent\r\n    LEFT JOIN `tabAdmission Payments` child ON parent.name = child.parent\r\nWHERE \r\n    parent.creation BETWEEN %(from_date)s AND %(to_date)s\r\n\r\nUNION ALL\r\n\r\nSELECT \r\n    'Additional Payments' as category,\r\n    IFNULL(SUM(payment_amount), 0) as total_amount,\r\n    COUNT(*) as transaction_count\r\nFROM \r\n    `tabAdditional Payments`\r\nWHERE \r\n    creation BETWEEN %(from_date)s AND %(to_date)s\r\n\r\nUNION ALL\r\n\r\nSELECT \r\n    'Expenses' as category,\r\n    IFNULL(SUM(payment_amount), 0) as total_amount,\r\n    COUNT(*) as transaction_count\r\nFROM \r\n    `tabExpenses`\r\nWHERE \r\n    creation BETWEEN %(from_date)s AND %(to_date)s\r\n\r\nUNION ALL\r\n\r\nSELECT \r\n    'Total Income' as category,\r\n    IFNULL(SUM(\r\n        CASE \r\n            WHEN category IN ('Patient Appointments', 'New Admissions', 'Additional Payments') \r\n            THEN total_amount \r\n            ELSE 0 \r\n        END\r\n    ), 0) as total_amount,\r\n    NULL as transaction_count\r\nFROM (\r\n    SELECT \r\n        'Patient Appointments' as category,\r\n        IFNULL(SUM(remaining_total), 0) as total_amount\r\n    FROM \r\n        `tabPatient Appointment`\r\n    WHERE \r\n        appointment_date BETWEEN %(from_date)s AND %(to_date)s\r\n    \r\n    UNION ALL\r\n    \r\n    SELECT \r\n        'New Admissions' as category,\r\n        IFNULL(SUM(child.payment_amount), 0) as total_amount\r\n    FROM \r\n        `tabNew Admission` parent\r\n        LEFT JOIN `tabAdmission Payments` child ON parent.name = child.parent\r\n    WHERE \r\n        parent.creation BETWEEN %(from_date)s AND %(to_date)s\r\n    \r\n    UNION ALL\r\n    \r\n    SELECT \r\n        'Additional Payments' as category,\r\n        IFNULL(SUM(payment_amount), 0) as total_amount\r\n    FROM \r\n        `tabAdditional Payments`\r\n    WHERE \r\n        creation BETWEEN %(from_date)s AND %(to_date)s\r\n) as income_summary\r\n\r\nUNION ALL\r\n\r\nSELECT \r\n    'Total Expenses' as category,\r\n    IFNULL(SUM(payment_amount), 0) as total_amount,\r\n    NULL as transaction_count\r\nFROM \r\n    `tabExpenses`\r\nWHERE \r\n    creation BETWEEN %(from_date)s AND %(to_date)s\r\n\r\nUNION ALL\r\n\r\nSELECT \r\n    'Net Amount' as category,\r\n    (\r\n        (\r\n            SELECT IFNULL(SUM(\r\n                CASE \r\n                    WHEN category IN ('Patient Appointments', 'New Admissions', 'Additional Payments') \r\n                    THEN total_amount \r\n                    ELSE 0 \r\n                END\r\n            ), 0)\r\n            FROM (\r\n                SELECT \r\n                    'Patient Appointments' as category,\r\n                    IFNULL(SUM(remaining_total), 0) as total_amount\r\n                FROM \r\n                    `tabPatient Appointment`\r\n                WHERE \r\n                    appointment_date BETWEEN %(from_date)s AND %(to_date)s\r\n                \r\n                UNION ALL\r\n                \r\n                SELECT \r\n                    'New Admissions' as category,\r\n                    IFNULL(SUM(child.payment_amount), 0) as total_amount\r\n                FROM \r\n                    `tabNew Admission` parent\r\n                    LEFT JOIN `tabAdmission Payments` child ON parent.name = child.parent\r\n                WHERE \r\n                    parent.creation BETWEEN %(from_date)s AND %(to_date)s\r\n                \r\n                UNION ALL\r\n                \r\n                SELECT \r\n                    'Additional Payments' as category,\r\n                    IFNULL(SUM(payment_amount), 0) as total_amount\r\n                FROM \r\n                    `tabAdditional Payments`\r\n                WHERE \r\n                    creation BETWEEN %(from_date)s AND %(to_date)s\r\n            ) as income_total\r\n        ) - (\r\n            SELECT IFNULL(SUM(payment_amount), 0)\r\n            FROM `tabExpenses`\r\n            WHERE creation BETWEEN %(from_date)s AND %(to_date)s\r\n        )\r\n    ) as total_amount,\r\n    NULL as transaction_count\r\n\r\nORDER BY \r\n    FIELD(category, \r\n        'Patient Appointments',\r\n        'New Admissions',\r\n        'Additional Payments',\r\n        'Expenses',\r\n        'Total Income',\r\n        'Total Expenses',\r\n        'Net Amount'\r\n    )",
+ "ref_doctype": "Patient Appointment",
+ "report_name": "Summary Report",
+ "report_script": "def execute(filters=None):\r\n    # Define columns\r\n    columns = [\r\n        {\"label\": \"Category\", \"fieldname\": \"category\", \"fieldtype\": \"Data\", \"width\": 200},\r\n        {\"label\": \"Total Amount\", \"fieldname\": \"total_amount\", \"fieldtype\": \"Currency\", \"width\": 150},\r\n        {\"label\": \"Transaction Count\", \"fieldname\": \"transaction_count\", \"fieldtype\": \"Int\", \"width\": 150}\r\n    ]\r\n\r\n    # Initialize data list\r\n    data = []\r\n\r\n    # 1. Patient Appointments Summary\r\n    appointment_query = \"\"\"\r\n        SELECT \r\n            IFNULL(SUM(remaining_total), 0) as total_amount,\r\n            COUNT(*) as transaction_count\r\n        FROM \r\n            `tabPatient Appointment`\r\n        WHERE \r\n            appointment_date BETWEEN %(from_date)s AND %(to_date)s\r\n    \"\"\"\r\n    appointment_data = frappe.db.sql(appointment_query, filters, as_dict=1)[0]\r\n\r\n    data.append({\r\n        \"category\": \"Patient Appointments\",\r\n        \"total_amount\": appointment_data.total_amount,\r\n        \"transaction_count\": appointment_data.transaction_count\r\n    })\r\n\r\n    # 2. New Admissions Summary\r\n    admission_query = \"\"\"\r\n        SELECT \r\n            IFNULL(SUM(child.payment_amount), 0) as total_amount,\r\n            COUNT(DISTINCT parent.name) as transaction_count\r\n        FROM \r\n            `tabNew Admission` parent\r\n            LEFT JOIN `tabAdmission Payments` child ON parent.name = child.parent\r\n        WHERE \r\n            parent.creation BETWEEN %(from_date)s AND %(to_date)s\r\n    \"\"\"\r\n    admission_data = frappe.db.sql(admission_query, filters, as_dict=1)[0]\r\n\r\n    data.append({\r\n        \"category\": \"New Admissions\",\r\n        \"total_amount\": admission_data.total_amount,\r\n        \"transaction_count\": admission_data.transaction_count\r\n    })\r\n\r\n    # 3. Additional Payments Summary\r\n    additional_payments_query = \"\"\"\r\n        SELECT \r\n            IFNULL(SUM(payment_amount), 0) as total_amount,\r\n            COUNT(*) as transaction_count\r\n        FROM \r\n            `tabAdditional Payments`\r\n        WHERE \r\n            creation BETWEEN %(from_date)s AND %(to_date)s\r\n    \"\"\"\r\n    additional_payments_data = frappe.db.sql(additional_payments_query, filters, as_dict=1)[0]\r\n\r\n    data.append({\r\n        \"category\": \"Additional Payments\",\r\n        \"total_amount\": additional_payments_data.total_amount,\r\n        \"transaction_count\": additional_payments_data.transaction_count\r\n    })\r\n\r\n    # 4. Expenses Summary\r\n    expenses_query = \"\"\"\r\n        SELECT \r\n            IFNULL(SUM(payment_amount), 0) as total_amount,\r\n            COUNT(*) as transaction_count\r\n        FROM \r\n            `tabExpenses`\r\n        WHERE \r\n            creation BETWEEN %(from_date)s AND %(to_date)s\r\n    \"\"\"\r\n    expenses_data = frappe.db.sql(expenses_query, filters, as_dict=1)[0]\r\n\r\n    data.append({\r\n        \"category\": \"Expenses\",\r\n        \"total_amount\": expenses_data.total_amount,\r\n        \"transaction_count\": expenses_data.transaction_count\r\n    })\r\n\r\n    # 5. Calculate Totals\r\n    total_income = (\r\n        float(appointment_data.total_amount) + \r\n        float(admission_data.total_amount) + \r\n        float(additional_payments_data.total_amount)\r\n    )\r\n    total_expense = float(expenses_data.total_amount)\r\n    net_amount = total_income - total_expense\r\n\r\n    # Add summary rows\r\n    data.append({\r\n        \"category\": \"Total Income\",\r\n        \"total_amount\": total_income,\r\n        \"transaction_count\": None\r\n    })\r\n    data.append({\r\n        \"category\": \"Total Expenses\",\r\n        \"total_amount\": total_expense,\r\n        \"transaction_count\": None\r\n    })\r\n    data.append({\r\n        \"category\": \"Net Amount\",\r\n        \"total_amount\": net_amount,\r\n        \"transaction_count\": None\r\n    })\r\n\r\n    return columns, data",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Receptionist"
+  },
+  {
+   "role": "Doctor"
+  }
+ ],
+ "timeout": 0
+}

@@ -1,0 +1,23 @@
+{
+ "creation": "2025-02-12 22:45:02.931730",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{\"from_date\":\"2025-02-12\",\"to_date\":\"2025-02-12\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Admission Total",
+ "modified": "2025-02-12 22:45:25.829252",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Admission Total",
+ "owner": "Administrator",
+ "report_field": "payment_amount",
+ "report_function": "Sum",
+ "report_name": "New Admissions Report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

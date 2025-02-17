@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{admission_no}",
+ "creation": "2025-02-07 22:21:37.000924",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "admission_no",
+  "date_of_admission",
+  "no_of_days",
+  "patient_name",
+  "consultant_name",
+  "column_break_osfe",
+  "patient_id",
+  "date_of_discharge",
+  "admit_in",
+  "on_oxygen_days",
+  "section_break_twhf",
+  "admission_fee",
+  "anaethetist_fee",
+  "column_break_nsyu",
+  "operation_fee",
+  "theater_charges",
+  "section_break_unti",
+  "tahir_visiting_fee",
+  "abid_visiting_fee",
+  "column_break_yjjk",
+  "abdul_visiting_fee",
+  "medical_officer",
+  "section_break_utab",
+  "ward_charges",
+  "room_charges",
+  "nursing_care",
+  "column_break_qfxk",
+  "icu_charges",
+  "oxygen_charges",
+  "circumcision_charges",
+  "section_break_hccd",
+  "special_services",
+  "monitoring_charges",
+  "column_break_ferx",
+  "medicine_charges",
+  "ota_charges",
+  "section_break_asgo",
+  "total",
+  "discount",
+  "column_break_oiit",
+  "advance",
+  "grand_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "admission_no",
+   "fieldtype": "Link",
+   "label": "Admission No.",
+   "options": "New Admission"
+  },
+  {
+   "fetch_from": "admission_no.patient_id",
+   "fieldname": "patient_id",
+   "fieldtype": "Data",
+   "label": "Patient ID"
+  },
+  {
+   "fetch_from": "admission_no.date",
+   "fieldname": "date_of_admission",
+   "fieldtype": "Data",
+   "label": "Date of Admission"
+  },
+  {
+   "fetch_from": "admission_no.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fetch_from": "admission_no.dr_id",
+   "fieldname": "consultant_name",
+   "fieldtype": "Data",
+   "label": "Consultant Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance",
+   "fieldtype": "Currency",
+   "label": "Advance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_osfe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "admission_no.date_of_discharge",
+   "fieldname": "date_of_discharge",
+   "fieldtype": "Data",
+   "label": "Date of Discharge"
+  },
+  {
+   "fetch_from": "admission_no.admission_in",
+   "fieldname": "admit_in",
+   "fieldtype": "Data",
+   "label": "Admit in"
+  },
+  {
+   "fieldname": "on_oxygen_days",
+   "fieldtype": "Int",
+   "label": "On Oxygen Days"
+  },
+  {
+   "fieldname": "section_break_asgo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "column_break_oiit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hccd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "500",
+   "fieldname": "admission_fee",
+   "fieldtype": "Data",
+   "label": "Admission Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ferx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "operation_fee",
+   "fieldtype": "Data",
+   "label": "Operation Fee"
+  },
+  {
+   "fieldname": "abdul_visiting_fee",
+   "fieldtype": "Data",
+   "label": "Dr. Abdul Rehman Visiting Fee"
+  },
+  {
+   "fieldname": "tahir_visiting_fee",
+   "fieldtype": "Data",
+   "label": "Dr. Tahir Mehmood Visiting Fee"
+  },
+  {
+   "fieldname": "medical_officer",
+   "fieldtype": "Data",
+   "label": "Medical Officer"
+  },
+  {
+   "fieldname": "special_services",
+   "fieldtype": "Data",
+   "label": "Special Services"
+  },
+  {
+   "fieldname": "circumcision_charges",
+   "fieldtype": "Data",
+   "label": "Circumcision Charges"
+  },
+  {
+   "fieldname": "monitoring_charges",
+   "fieldtype": "Data",
+   "label": "Monitoring Charges"
+  },
+  {
+   "fieldname": "nursing_care",
+   "fieldtype": "Data",
+   "label": "Nursing Care"
+  },
+  {
+   "fieldname": "medicine_charges",
+   "fieldtype": "Data",
+   "label": "Medical Charges"
+  },
+  {
+   "fieldname": "oxygen_charges",
+   "fieldtype": "Data",
+   "label": "Oxygen Charges"
+  },
+  {
+   "fieldname": "ota_charges",
+   "fieldtype": "Data",
+   "label": "OTA Charges"
+  },
+  {
+   "fieldname": "anaethetist_fee",
+   "fieldtype": "Data",
+   "label": "Anaethetist Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ward_charges",
+   "fieldtype": "Data",
+   "label": "Ward Charges"
+  },
+  {
+   "fieldname": "icu_charges",
+   "fieldtype": "Data",
+   "label": "ICU Charges"
+  },
+  {
+   "fieldname": "theater_charges",
+   "fieldtype": "Data",
+   "label": "Theater Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "room_charges",
+   "fieldtype": "Data",
+   "label": "Room Charges"
+  },
+  {
+   "fieldname": "abid_visiting_fee",
+   "fieldtype": "Data",
+   "label": "Dr. Abid Hussain Visiting Fee"
+  },
+  {
+   "fetch_from": "admission_no.patient_name",
+   "fieldname": "no_of_days",
+   "fieldtype": "Data",
+   "label": "No of days"
+  },
+  {
+   "fieldname": "section_break_twhf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nsyu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_unti",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_utab",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qfxk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yjjk",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-09 13:24:22.374449",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Discharge Bill",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

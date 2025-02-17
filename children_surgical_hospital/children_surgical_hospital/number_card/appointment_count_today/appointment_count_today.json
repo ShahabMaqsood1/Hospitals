@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2025-01-29 22:25:00.433346",
+ "creation": "2025-02-12 22:47:18.408192",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "Patient Appointment",
@@ -11,7 +11,7 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "Appointment count today",
- "modified": "2025-01-31 22:37:39.236312",
+ "modified": "2025-02-12 22:47:18.408192",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Appointment count today",

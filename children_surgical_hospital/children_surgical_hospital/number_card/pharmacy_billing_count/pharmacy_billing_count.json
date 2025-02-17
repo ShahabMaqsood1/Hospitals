@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "",
- "creation": "2025-01-27 23:45:25.210081",
+ "creation": "2025-02-12 22:46:02.255745",
  "docstatus": 0,
  "doctype": "Number Card",
  "document_type": "Pharmacy Bills",
@@ -11,7 +11,7 @@
  "is_public": 0,
  "is_standard": 1,
  "label": "Pharmacy Billing Count",
- "modified": "2025-01-31 22:43:21.387610",
+ "modified": "2025-02-12 22:46:02.255745",
  "modified_by": "Administrator",
  "module": "Children Surgical Hospital",
  "name": "Pharmacy Billing Count",

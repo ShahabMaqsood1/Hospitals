@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{appointment_no}",
+ "creation": "2024-12-12 16:00:05.418894",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "appointment_no",
+  "patient_name",
+  "age",
+  "gender",
+  "column_break_qzul",
+  "patient_id",
+  "doctor_id",
+  "weight",
+  "phone",
+  "section_break_uytu",
+  "report",
+  "amended_from",
+  "section_break_dnbd",
+  "lab_tests",
+  "payment",
+  "discount",
+  "remaining_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "appointment_no",
+   "fieldtype": "Link",
+   "label": "Appointment No.",
+   "options": "Patient Appointment"
+  },
+  {
+   "fetch_from": "appointment_no.patient_id",
+   "fieldname": "patient_id",
+   "fieldtype": "Data",
+   "label": "Patient Id"
+  },
+  {
+   "fetch_from": "appointment_no.phone_number",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "column_break_qzul",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "appointment_no.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fetch_from": "appointment_no.age",
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
+  },
+  {
+   "fetch_from": "appointment_no.weight",
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "section_break_uytu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "report",
+   "fieldtype": "Table",
+   "label": "Report",
+   "options": "Patient Report"
+  },
+  {
+   "fieldname": "lab_tests",
+   "fieldtype": "Table",
+   "label": "Lab Tests",
+   "options": "lab tests"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Check Patient",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "appointment_no.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "section_break_dnbd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "appointment_no.doctor_id",
+   "fieldname": "doctor_id",
+   "fieldtype": "Data",
+   "label": "Doctor Name"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "appointment_no.payment",
+   "fieldname": "payment",
+   "fieldtype": "Data",
+   "label": "Amount Paid",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount",
+   "precision": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_total",
+   "fieldtype": "Currency",
+   "label": "Remaining Total",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-09 20:25:32.968296",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Check Patient",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Doctor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

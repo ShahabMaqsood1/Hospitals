@@ -1,0 +1,22 @@
+{
+ "creation": "2025-02-12 22:36:45.150130",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "filters_json": "{\"from_date\":\"2025-01-01\",\"to_date\":\"2025-02-28\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Additional Payments Total",
+ "modified": "2025-02-12 22:36:45.150130",
+ "modified_by": "Administrator",
+ "module": "Children Surgical Hospital",
+ "name": "Additional Payments Total",
+ "owner": "Administrator",
+ "report_field": "payment_amount",
+ "report_function": "Sum",
+ "report_name": "Additional Payments Report",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
